@@ -6,11 +6,11 @@ import "github.com/bkoz/golang-sandbox/frimage"
 func main() {
 	const (
 		a int = iota
-	    b 
+		b
 	)
 
-	// fmt.Println("a = ", a)
+	// fmt.Errorf("error: %d", a)
 	// fmt.Println("b = ", b)
 
-    frimage.Write()
+	frimage.Write()
 }
