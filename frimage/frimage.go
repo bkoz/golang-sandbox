@@ -8,7 +8,7 @@ import (
 	"image"
 	"image/color"
 	"image/png"
-  	"os"
+	"os"
 )
 
 //
@@ -23,8 +23,8 @@ func Write() {
 	img := image.NewRGBA(image.Rect(0, 0, width, height))
 	for py := 0; py < height; py++ {
 		for px := 0; px < width; px++ {
-                        // Hardwire to 50% gray for now.
-			pixelColor :=  color.Gray{128}
+			// Hardwire to 50% gray for now.
+			pixelColor := color.Gray{127}
 			img.Set(px, py, pixelColor)
 		}
 	}
@@ -33,4 +33,3 @@ func Write() {
 	e := png.Encoder{CompressionLevel: png.NoCompression}
 	e.Encode(os.Stdout, img) // NOTE: ignoring errors
 }
-
