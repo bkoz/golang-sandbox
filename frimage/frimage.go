@@ -1,7 +1,4 @@
-//
-// frImage - Image utils.
-//
-
+// Package frimage - A collection of image utilities.
 package frimage
 
 import (
@@ -12,7 +9,7 @@ import (
 )
 
 //
-// Write - Create an image file.
+// Write - Create and write pixel data to a PNG format image file.
 //
 func Write() {
 	const (

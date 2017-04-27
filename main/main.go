@@ -1,7 +1,7 @@
 package main
 
-// import "fmt"
-import "github.com/bkoz/golang-sandbox/frimage"
+import "fmt"
+import "github.com/bkoz/golang-sandbox/frvector"
 
 func main() {
 	const (
@@ -9,8 +9,12 @@ func main() {
 		b
 	)
 
-	// fmt.Errorf("error: %d", a)
-	// fmt.Println("b = ", b)
+	var z frvector.VecStruct
 
-	frimage.Write()
+	z.Set(0.707, 1.414, 2.52)
+	var localvec = z.Get()
+
+	fmt.Println("localvec = ", localvec[0], localvec[1], localvec[2])
+
+	// frimage.Write()
 }
