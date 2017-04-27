@@ -15,6 +15,8 @@ func main() {
 	var localvec = z.Get()
 
 	fmt.Println("localvec = ", localvec)
+	z.Scale(2)
+	fmt.Println("scaled = ", z.Get())
 	fmt.Println("localvec origin [1] = ", localvec.GetOrigin(1))
 	fmt.Println("localvec dir [1] = ", localvec.GetDirection(1))
 	fmt.Println("distance = ", z.Normalize())

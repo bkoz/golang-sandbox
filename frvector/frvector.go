@@ -42,3 +42,10 @@ func (v *Vector) Normalize() float64 {
 	v.d[2] /= d
 	return d
 }
+
+// Scale - Scale the origin by 's' along the direction.
+func (v *Vector) Scale(s float64) {
+	v.o[0] = v.d[0] * s
+	v.o[1] = v.d[1] * s
+	v.o[2] = v.d[2] * s
+}
