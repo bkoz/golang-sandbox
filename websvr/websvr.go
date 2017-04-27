@@ -1,3 +1,4 @@
+// Package main - Web server w/QR code generator. Taken from https://golang.org/doc/effective_go.html#web_server
 package main
 
 import (
