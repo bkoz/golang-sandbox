@@ -3,7 +3,7 @@ package main
 import "fmt"
 import "github.com/bkoz/golang-sandbox/frvector"
 
-// Main - Testing libraries and built-in golang functions.
+// Main - Testing local packages and built-in golang functions.
 func main() {
 	const (
 		a int = iota
