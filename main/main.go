@@ -3,6 +3,7 @@ package main
 import "fmt"
 import "github.com/bkoz/golang-sandbox/frvector"
 
+// Main - Testing libraries and built-in functions.
 func main() {
 	const (
 		a int = iota
@@ -11,7 +12,7 @@ func main() {
 
 	var z frvector.Vector
 
-	z.Set(0, 0, 0, 0.707, 1.414, 2.52)
+	z.Set(0, 0, 0, 0.707, 1.414, 3.52)
 	var localvec = z.Get()
 
 	fmt.Println("localvec = ", localvec)
