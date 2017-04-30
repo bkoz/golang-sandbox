@@ -15,6 +15,7 @@ func main() {
 	z.Set(0, 0, 0, 0.707, 1.414, 3.52)
 	var localvec = z.Get()
 
+	fmt.Println("rev. 1.1")
 	fmt.Println("localvec = ", localvec)
 	z.Scale(2)
 	fmt.Println("scaled = ", z.Get())
