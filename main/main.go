@@ -11,16 +11,15 @@ func main() {
 	)
 
 	var z frvector.Vec3
-	z.Set(0.707, 1.414, 3.52)
+	z.Set(1, 1, 1)
 	var localvec = z.Get()
 
 	fmt.Println("localvec = ", localvec)
-	z.Scale(2)
-	fmt.Println("scaled by 2 = ", z.Get())
+	// z.Scale(2)
+	// fmt.Println("scaled by 2 = ", z.Get())
 	fmt.Println("localvec[1] = ", localvec.GetComponent(1))
 	fmt.Println("distance = ", z.Normalize())
-	localvec = z.Get()
-	fmt.Println("normalized dir = ", localvec)
+	fmt.Println("normalized = ", z.Get())
 
 	// frimage.Write()
 }
