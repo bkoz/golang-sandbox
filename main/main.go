@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-import "github.com/bkoz/golang-sandbox/frVector"
+import "github.com/bkoz/golang-sandbox/frvector"
 
 // Main - Testing local packages and built-in golang functions.
 func main() {
@@ -10,11 +10,10 @@ func main() {
 		b
 	)
 
-	var z frVector.Vec3
+	var z frvector.Vec3
 	z.Set(0.707, 1.414, 3.52)
 	var localvec = z.Get()
 
-	fmt.Println("rev. 1.1")
 	fmt.Println("localvec = ", localvec)
 	z.Scale(2)
 	fmt.Println("scaled by 2 = ", z.Get())

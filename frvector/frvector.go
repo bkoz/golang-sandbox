@@ -1,5 +1,5 @@
 // Package frVector - A collection of Vector routines.
-package frVector
+package frvector
 
 import "math"
 
