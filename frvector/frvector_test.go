@@ -1,3 +1,4 @@
+// Package frvector
 package frvector
 
 import (
@@ -5,6 +6,7 @@ import (
 	"testing"
 )
 
+// TestNormalize
 func TestNormalize(t *testing.T) {
 	fmt.Println("TestNormalize")
 	var v Vec3
