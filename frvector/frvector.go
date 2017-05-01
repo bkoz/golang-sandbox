@@ -15,6 +15,12 @@ func (v *Vec3) Set(x, y, z float64) {
 	v.c[2] = z
 }
 
+// GetC - Returns the array of floats. Probably makes sense to change this to Get() and
+// remove GetComponent()
+func (v *Vec3) GetC() [3]float64 {
+	return v.c
+}
+
 // Get - Returns the Vec3.
 func (v *Vec3) Get() Vec3 {
 	return *v
