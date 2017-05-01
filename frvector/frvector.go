@@ -1,4 +1,4 @@
-// Package frVector - A collection of Vector routines.
+// Package frvector - A collection of Vector routines.
 package frvector
 
 import "math"
@@ -20,7 +20,7 @@ func (v *Vec3) Get() Vec3 {
 	return *v
 }
 
-// GetOrigin - Returns the i'th component of the Vec3 origin.
+// GetComponent - Returns the i'th component of the Vec3 origin.
 func (v *Vec3) GetComponent(i int) float64 {
 	return v.c[i]
 }
