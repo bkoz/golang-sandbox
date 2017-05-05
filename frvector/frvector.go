@@ -15,20 +15,9 @@ func (v *Vec3) Set(x, y, z float64) {
 	v.c[2] = z
 }
 
-// GetC - Returns the array of floats. Probably makes sense to change this to Get() and
-// remove GetComponent()
-func (v *Vec3) GetC() [3]float64 {
+// Get - Returns the 3D array of floats.
+func (v *Vec3) Get() [3]float64 {
 	return v.c
-}
-
-// Get - Returns the Vec3.
-func (v *Vec3) Get() Vec3 {
-	return *v
-}
-
-// GetComponent - Returns the i'th component of the Vec3 origin.
-func (v *Vec3) GetComponent(i int) float64 {
-	return v.c[i]
 }
 
 // Normalize - Normalize the i'th component of the Vec3 direction.
@@ -40,9 +29,30 @@ func (v *Vec3) Normalize() float64 {
 	return d
 }
 
-// Scale - Scale the origin by 's' along the direction.
-func (v *Vec3) Scale(s float64) {
-	v.c[0] = v.c[0] * s
-	v.c[1] = v.c[1] * s
-	v.c[2] = v.c[2] * s
+// Scale - Scale a vector by s in the direction of v2.
+func (v *Vec3) Scale(s float64, v2 Vec3) {
+	v.c[0] += v2.c[0] * s
+	v.c[1] += v2.c[1] * s
+	v.c[2] += v2.c[2] * s
+}
+
+// Add -
+func (v *Vec3) Add(v2 Vec3) {
+	v.c[0] += v2.c[0]
+	v.c[1] += v2.c[1]
+	v.c[2] += v2.c[2]
+}
+
+// Dot - Calculate and return the dot product.
+func (v *Vec3) Dot(v2 Vec3) float64 {
+	return (v.c[0] * v2.c[0]) + (v.c[1] * v2.c[1]) + (v.c[2] * v2.c[2])
+}
+
+// Cross - Calculate and return the cross product.
+func (v *Vec3) Cross(v2 Vec3) Vec3 {
+	var c Vec3
+	c.c[0] = v.c[1]*v2.c[2] - v.c[2]*v2.c[1]
+	c.c[1] = v.c[2]*v2.c[0] - v.c[0]*v2.c[2]
+	c.c[2] = v.c[0]*v2.c[1] - v.c[1]*v2.c[0]
+	return c
 }
