@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// TestGetC
+// TestGet
 func TestGet(t *testing.T) {
 	var v Vec3
 	v.Set(1, 1, 1)

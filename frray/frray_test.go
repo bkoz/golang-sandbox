@@ -1,17 +1,19 @@
-// Package frray_test
+// Package frray
 package frray
 
 import (
 	"testing"
 )
 
-// TestGetOrigin
-func TestGetOrigin(t *testing.T) {
+// TestSetGet
+func TestSetGet(t *testing.T) {
 	var r Ray
 	r.SetOrigin(1, 1, 1)
-	if r.Get()[0] == 1 && r.Get()[1] == 1 && r.Get()[2] == 1 {
+	r.SetDirection(1, 1, 1)
+	if r.o.Get()[0] == 1 && r.o.Get()[1] == 1 && r.o.Get()[2] == 1 &&
+		r.d.Get()[0] == 1 && r.d.Get()[1] == 1 && r.d.Get()[2] == 1 {
 
 	} else {
-		t.Error(`GetOrigin() = false`)
+		t.Error(`SetGet() = false`)
 	}
 }

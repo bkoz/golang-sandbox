@@ -1,4 +1,4 @@
-package ray
+package frray
 
 import "github.com/bkoz/golang-sandbox/frvector"
 
@@ -20,7 +20,7 @@ func (r *Ray) GetOrigin() frvector.Vec3 {
 
 // SetDirection - Sets a Ray's Direction given 3 floats.
 func (r *Ray) SetDirection(x, y, z float64) {
-	r.o.Set(x, y, z)
+	r.d.Set(x, y, z)
 }
 
 // GetDirection - Returns the Direction of the ray.
