@@ -53,7 +53,21 @@ func TestAdd(t *testing.T) {
 		v.Get()[1] == 2 &&
 		v.Get()[2] == 2 {
 	} else {
-		t.Error(`Scale() = false`)
+		t.Error(`Add() = false`)
+	}
+}
+
+// TestSubtract
+func TestSubtract(t *testing.T) {
+	var v, v2 Vec3
+	v.Set(1, 1, 1)
+	v2.Set(1, 1, 1)
+	v.Subtract(v2)
+	if v.Get()[0] == 0 &&
+		v.Get()[1] == 0 &&
+		v.Get()[2] == 0 {
+	} else {
+		t.Error(`Subtract() = false`)
 	}
 }
 

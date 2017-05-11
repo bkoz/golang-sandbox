@@ -17,7 +17,7 @@ func main() {
 	fmt.Println("localvec = ", localvec)
 	// z.Scale(2)
 	// fmt.Println("scaled by 2 = ", z.Get())
-	fmt.Println("localvec[1] = ", localvec.GetComponent(1))
+	fmt.Println("localvec[1] = ", localvec[1])
 	fmt.Println("distance = ", z.Normalize())
 	fmt.Println("normalized = ", z.Get())
 

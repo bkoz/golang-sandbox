@@ -29,18 +29,25 @@ func (v *Vec3) Normalize() float64 {
 	return d
 }
 
-// Scale - Scale a vector by s in the direction of v2.
+// Scale - Scale this vector by s in the direction of v2.
 func (v *Vec3) Scale(s float64, v2 Vec3) {
 	v.c[0] += v2.c[0] * s
 	v.c[1] += v2.c[1] * s
 	v.c[2] += v2.c[2] * s
 }
 
-// Add -
+// Add - Add v2 to this vector.
 func (v *Vec3) Add(v2 Vec3) {
 	v.c[0] += v2.c[0]
 	v.c[1] += v2.c[1]
 	v.c[2] += v2.c[2]
+}
+
+// Subtract - Subtract v2 from this vector.
+func (v *Vec3) Subtract(v2 Vec3) {
+	v.c[0] -= v2.c[0]
+	v.c[1] -= v2.c[1]
+	v.c[2] -= v2.c[2]
 }
 
 // Dot - Calculate and return the dot product.
