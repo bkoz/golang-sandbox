@@ -4,11 +4,13 @@ import "fmt"
 import "github.com/bkoz/golang-sandbox/frvector"
 import "github.com/bkoz/golang-sandbox/frtrig"
 
+// Console -
 type Console struct {
 	X int
 	Y int
 }
 
+// NewConsole - Init console members
 func NewConsole() *Console {
 	return &Console{X: 5, Y: 10}
 }
@@ -37,7 +39,7 @@ func main() {
 	p.Calc()
 	fmt.Println("pi = ", p.Get())
 
-	var c Console = *NewConsole()
+	var c = *NewConsole()
 
 	fmt.Println("console = ", c)
 
