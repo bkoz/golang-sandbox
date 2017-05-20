@@ -32,8 +32,9 @@ func main() {
 	fmt.Println("localvec[1] = ", localvec[1])
 	fmt.Println("distance = ", z.Normalize())
 	fmt.Println("normalized = ", z.Get())
-	z.Scale(2, u)
-	fmt.Println("scaled by 2 = ", z.Get())
+	fmt.Println("u = ", u.Get())
+	u.Scale(2, u)
+	fmt.Println("scaled by 2 = ", u.Get())
 
 	// Call Pi
 	var p frtrig.Pi
