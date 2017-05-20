@@ -1,3 +1,4 @@
+// Main - golang sandbox
 package main
 
 import "fmt"
@@ -20,6 +21,7 @@ func main() {
 	const (
 		a int = iota
 		b
+		d
 	)
 
 	var z frvector.Vec3
@@ -28,6 +30,7 @@ func main() {
 	u.Set(1, 1, 1)
 	var localvec = z.Get()
 
+	fmt.Println("a b c = ", a, b, d)
 	fmt.Println("localvec = ", localvec)
 	fmt.Println("localvec[1] = ", localvec[1])
 	fmt.Println("distance = ", z.Normalize())
