@@ -13,6 +13,7 @@ type Pi struct {
 
 // Init - Set defaults.
 func (pi *Pi) Init() {
+	pi.p = 0
 	pi.SetPrecision(6)
 }
 
