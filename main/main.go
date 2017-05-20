@@ -24,14 +24,16 @@ func main() {
 
 	var z frvector.Vec3
 	z.Set(1, 1, 1)
+	var u frvector.Vec3
+	u.Set(1, 1, 1)
 	var localvec = z.Get()
 
 	fmt.Println("localvec = ", localvec)
-	// z.Scale(2)
-	// fmt.Println("scaled by 2 = ", z.Get())
 	fmt.Println("localvec[1] = ", localvec[1])
 	fmt.Println("distance = ", z.Normalize())
 	fmt.Println("normalized = ", z.Get())
+	z.Scale(2, u)
+	fmt.Println("scaled by 2 = ", z.Get())
 
 	// Call Pi
 	var p frtrig.Pi
