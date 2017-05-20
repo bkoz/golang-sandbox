@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 import "github.com/bkoz/golang-sandbox/frvector"
+import "github.com/bkoz/golang-sandbox/frtrig"
 
 // Main - Testing local packages and built-in golang functions.
 func main() {
@@ -20,6 +21,12 @@ func main() {
 	fmt.Println("localvec[1] = ", localvec[1])
 	fmt.Println("distance = ", z.Normalize())
 	fmt.Println("normalized = ", z.Get())
+
+	// Call Pi
+	var p frtrig.Pi
+	p.Init()
+	p.Calc()
+	fmt.Println("pi = ", p.Get())
 
 	// frimage.Write()
 }
