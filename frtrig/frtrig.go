@@ -13,7 +13,7 @@ type Pi struct {
 
 // Init - Set defaults.
 func (pi *Pi) Init() {
-	pi.precision = 6
+	pi.SetPrecision(6)
 }
 
 // Get - Returns the value of pi.p.
@@ -21,7 +21,7 @@ func (pi *Pi) Get() float64 {
 	return pi.p
 }
 
-// SetPrecision - Accuracy and compute time increases with x. 7 is a reasonable value.
+// SetPrecision - Accuracy and compute time increases with x. 6 is a reasonable value.
 func (pi *Pi) SetPrecision(x uint) {
 	var exponent float64
 	exponent = float64(x)
