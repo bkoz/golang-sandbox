@@ -4,6 +4,15 @@ import "fmt"
 import "github.com/bkoz/golang-sandbox/frvector"
 import "github.com/bkoz/golang-sandbox/frtrig"
 
+type Console struct {
+	X int
+	Y int
+}
+
+func NewConsole() *Console {
+	return &Console{X: 5, Y: 10}
+}
+
 // Main - Testing local packages and built-in golang functions.
 func main() {
 	const (
@@ -27,6 +36,10 @@ func main() {
 	p.Init()
 	p.Calc()
 	fmt.Println("pi = ", p.Get())
+
+	var c Console = *NewConsole()
+
+	fmt.Println("console = ", c)
 
 	// frimage.Write()
 }
