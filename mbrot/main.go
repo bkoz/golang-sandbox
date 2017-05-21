@@ -104,7 +104,6 @@ func writeImage(w http.ResponseWriter, img *image.Image) {
 //!+
 
 // Mandelbrot - Calculates and returns an image of the Mandelbrot fractal.
-
 func createImage(width int, height int) image.Image {
 	const (
 		xmin, ymin, xmax, ymax = -2, -2, +2, +2
@@ -123,6 +122,9 @@ func createImage(width int, height int) image.Image {
 	// png.Encode(os.Stdout, img) // NOTE: ignoring errors
 	return img
 }
+
+// mandelbrot - Compute and return the pixel.
+//              Implement color LUT using a go map type - key is based on 'n'?
 
 func mandelbrot(z complex128) color.Color {
 	const iterations = 200
