@@ -50,9 +50,10 @@ func redHandler(w http.ResponseWriter, r *http.Request) {
 
 // plotHandler - Draw the fractal image.
 func fracHandler(w http.ResponseWriter, r *http.Request) {
-	m := image.NewRGBA(image.Rect(0, 0, 1024, 1024))
-	// gray := color.RGBA{128, 128, 128, 255}
-	mandel := createImage(1024, 1024)
+	width := 256
+	height := 256
+	m := image.NewRGBA(image.Rect(0, 0, width, height))
+	mandel := createImage(width, height)
 	draw.Draw(m, m.Bounds(), mandel, image.ZP, draw.Src)
 
 	var img image.Image = m
@@ -131,10 +132,24 @@ func mandelbrot(z complex128) color.Color {
 	const contrast = 15
 
 	var v complex128
+
+	lut := make(map[uint8]color.Color)
+
+	for i := 0; i < 256; i++ {
+		if i < 100 {
+			lut[uint8(i)] = color.RGBA{255, 0, 0, 255}
+		} else {
+			lut[uint8(i)] = color.RGBA{255, 255, 0, 255}
+
+		}
+	}
+
 	for n := uint8(0); n < iterations; n++ {
 		v = v*v + z
 		if cmplx.Abs(v) > 2 {
+			// fmt.Print(255-contrast*n, " ")
 			return color.Gray{255 - contrast*n}
+			// return lut[255-contrast*n]
 		}
 	}
 	return color.Black
