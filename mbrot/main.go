@@ -8,6 +8,7 @@ import (
 	"html/template"
 	"image"
 	"image/color"
+	"image/color/palette"
 	"image/draw"
 	"image/jpeg"
 	"log"
@@ -50,8 +51,8 @@ func redHandler(w http.ResponseWriter, r *http.Request) {
 
 // plotHandler - Draw the fractal image.
 func fracHandler(w http.ResponseWriter, r *http.Request) {
-	width := 256
-	height := 256
+	width := 4096
+	height := 4096
 	m := image.NewRGBA(image.Rect(0, 0, width, height))
 	mandel := createImage(width, height)
 	draw.Draw(m, m.Bounds(), mandel, image.ZP, draw.Src)
@@ -60,7 +61,8 @@ func fracHandler(w http.ResponseWriter, r *http.Request) {
 	writeImageWithTemplate(w, &img)
 }
 
-var ImageTemplate string = `<!DOCTYPE html>
+// ImageTemplate -
+var ImageTemplate = `<!DOCTYPE html>
 <html lang="en"><head></head>
 <body><img src="data:image/jpg;base64,{{.Image}}"></body>`
 
@@ -132,24 +134,12 @@ func mandelbrot(z complex128) color.Color {
 	const contrast = 15
 
 	var v complex128
-
-	lut := make(map[uint8]color.Color)
-
-	for i := 0; i < 256; i++ {
-		if i < 100 {
-			lut[uint8(i)] = color.RGBA{255, 0, 0, 255}
-		} else {
-			lut[uint8(i)] = color.RGBA{255, 255, 0, 255}
-
-		}
-	}
-
 	for n := uint8(0); n < iterations; n++ {
 		v = v*v + z
 		if cmplx.Abs(v) > 2 {
 			// fmt.Print(255-contrast*n, " ")
-			return color.Gray{255 - contrast*n}
-			// return lut[255-contrast*n]
+			// return color.Gray{255 - contrast*n}
+			return palette.Plan9[255-contrast*n]
 		}
 	}
 	return color.Black
